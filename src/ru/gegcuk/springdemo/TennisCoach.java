@@ -1,5 +1,8 @@
 package ru.gegcuk.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -13,6 +16,16 @@ public class TennisCoach implements Coach {
 	
 	public TennisCoach() {
 		System.out.println("I'm inside default constructor");
+	}
+	
+	@PreDestroy
+	public void doMyCleanupStuff() {
+		System.out.println("I'm in predestroy method");
+	}
+	
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println("I'm in starting method");
 	}
 	
 //	@Autowired

@@ -10,7 +10,7 @@ public class RandomFortuneService implements FortuneService {
  
 	@Override
 	public String getFortune() {
-		return fortunes[(int) Math.round(Math.random() * 3)];
+		return fortunes[(int) Math.floor(Math.random() * fortunes.length)];
 	}
 
 }
